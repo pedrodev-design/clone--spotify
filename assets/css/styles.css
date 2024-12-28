@@ -42,7 +42,7 @@ main {
     flex-grow: 1;
     overflow-y: auto;
     background: linear-gradient(to bottom, #1f1f1f, #030303);
-    background-size: 100% 50%; /* Gradiente ocupa 50% da altura */
+    background-size: 100% 50%;
     background-repeat: no-repeat;
     margin: 1rem;
     border-radius: 10px;
@@ -195,7 +195,7 @@ main {
     font-size: 1.3rem;
     color: #1DB954;
     cursor: pointer;
-    position: relative; /* Necessário para o posicionamento do tooltip */
+    position: relative; 
     transition: color 0.3s;
 }
 
@@ -210,15 +210,15 @@ main {
 .tooltip {
     display: none;
     position: absolute;
-    bottom: -40px; /* Ajuste a posição para acomodar o texto maior */
+    bottom: -40px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
     color: #FFF;
     font-weight: 600;
-    padding: 8px 12px; /* Aumenta o padding para acomodar o texto maior */
+    padding: 8px 12px;
     border-radius: 5px;
-    font-size: 16px; /* Aumenta o tamanho da fonte */
+    font-size: 16px; 
     white-space: nowrap;
 }
 #map-icon:hover + .tooltip {
@@ -416,11 +416,11 @@ main {
     position: absolute;
     top: 65%;
     left: 70%;
-    transform: translate(-50%, -50%) translateY(10px); /* Inicialmente, ícone abaixo da posição */
+    transform: translate(-50%, -50%) translateY(10px);
     font-size: 3rem;
-    color: #1DB954; /* Cor inicial */
-    opacity: 0; /* Invisível inicialmente */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transições para o ícone */
+    color: #1DB954;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     pointer-events: none;
 }
 
@@ -428,13 +428,13 @@ main {
 .artist-card:hover .play-icon,
 .album-card:hover .play-icon {
     opacity: 1;
-    transform: translate(-50%, -50%) translateY(-10px); /* Move o ícone para cima */
+    transform: translate(-50%, -50%) translateY(-10px); 
 }
 
 /* Aplica a mudança de cor e tamanho somente quando o mouse passar sobre o ícone */
 .play-icon:hover {
-    color: red; /* Altera a cor do ícone para vermelho */
-    transform: translate(-50%, -50%) translateY(-10px) scale(1.2); /* Aumenta o ícone e move para cima */
+    color: red;
+    transform: translate(-50%, -50%) translateY(-10px) scale(1.2);
 }
 
 /* Aumenta o tamanho do card no hover, incluindo o ícone */
@@ -448,5 +448,5 @@ main {
 /* Evitar "piscar" ao sair do hover - Foco nas transições sincronizadas */
 .artist-card,
 .album-card {
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Foco nas transições sincronizadas */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; 
 }
