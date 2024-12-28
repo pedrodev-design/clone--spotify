@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #FFF;
+    font-family: "Roboto", serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+.nav-lang-button {
+    background-color: #FFF;
+    color: #000;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-top: 16px;
+    cursor: pointer;
+    border: 2px solid #FFF;
+    font-weight: 600;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: transparent;
+    border: 2px solid #FFF;
+    color: #FFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    padding: 24px;
+    flex-grow: 1;
+    overflow-y: auto;
+    background: linear-gradient(to bottom, #1f1f1f, #030303);
+    background-size: 100% 50%; /* Gradiente ocupa 50% da altura */
+    background-repeat: no-repeat;
+    margin: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #121212;
+    padding: 24px 24px 90px 24px;
+    margin: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.nav-logo i {
+    font-size: 24px;
+    color: #1DB954;
+}
+
+.nav-library {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-library p:hover {
+    color: #FFF;
+    transition: color 0.3s;
+}
+
+.nav-library i,
+.nav-library p {
+    cursor: pointer;
+    color: #B7B3B6;
+    font-size: 14px;
+}
+
+.nav-playlist,
+.nav-podcast {
+    background-color: #242424;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.nav-playlist h5,
+.nav-podcast h5 {
+    font-size: 17px;
+}
+
+.nav-playlist p,
+.nav-podcast p {
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.nav-footer {
+    margin-top: auto;
+}
+
+.nav-footer a {
+    color: #A7A7A7;
+    font-size: 12px;
+    margin-right: 12px;
+    margin-bottom: 8px;
+}
+
+.nav-footer a:hover {
+    color: #FFF;
+    transition: color 0.3s;
+}
+
+.nav-lang-button {
+    background-color: transparent;
+    border: 2px solid #FFF;
+    color: #FFF;
+    padding: 8px 12px;
+    margin-top: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.nav-lang-button:hover {
+    background-color: #FFF;
+    border: 2px solid transparent;
+    color: #121212;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Search */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #242424;
+    padding: 15px 20px;
+    border-radius: 50px;
+    width: 300px;
+    transition: all 0.3s ease, box-shadow 0.3s ease;
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.search-bar input {
+    background-color: transparent;
+    border: none;
+    color: #FFF;
+    width: 100%;
+    margin-left: 5px;
+    outline: none;
+    font-weight: 600;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #242424;
+    padding: 15px 20px;
+    border-radius: 50px;
+    width: 300px;
+    transition: all 0.3s ease;
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
+}
+
+#map-icon {
+    font-size: 1.3rem;
+    color: #1DB954;
+    cursor: pointer;
+    position: relative; /* Necessário para o posicionamento do tooltip */
+    transition: color 0.3s;
+}
+
+#map-icon:hover {
+    color: #FFF;
+}
+
+.map-container {
+    position: relative;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    bottom: -40px; /* Ajuste a posição para acomodar o texto maior */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #FFF;
+    font-weight: 600;
+    padding: 8px 12px; /* Aumenta o padding para acomodar o texto maior */
+    border-radius: 5px;
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    white-space: nowrap;
+}
+#map-icon:hover + .tooltip {
+    display: block; 
+}
+
+.search-group {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.plans {
+    background-color: #FFF;
+    color: #000;
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 2px solid #FFF;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.plans:hover {
+    background-color: transparent;
+    border: 2px solid #FFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.plans:hover a {
+    color: #FFF;
+}
+
+.plans a {
+    color: #202020;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.download {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFF;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.download:hover,
+.download a:hover,
+.bell:hover {
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    color: #7e7e7e;
+}
+
+.bell:hover {
+    transition: background-color 0.3s, color 0.3s;
+    color: #1ED760;
+}
+
+.download i {
+    font-size: 1.2rem;
+}
+
+.download a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+.circle-profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 8px solid #131313;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+
+.circle-profile:hover {
+    border-color: #1DB954;
+    transform: scale(1.1); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.circle-profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content */
+
+.content {
+    padding: 2rem 2rem 0rem 0rem;
+}
+
+.content h2 {
+    padding: 0rem 1rem 1rem 0;
+}
+
+/* Artist & Album */
+.artists-grid,
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.artist-card,
+.album-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2b2b2b;
+    padding: 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.artist-card:hover,
+.album-card:hover {
+    background-color: #222222;
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.artist-card img,
+.album-card img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    object-fit: cover;
+}
+
+.album-card img {
+    border-radius: 10px;
+}
+
+.artist-card h4,
+.album-card h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFF;
+    margin-bottom: 10px;
+}
+
+.artist-card p,
+.album-card p {
+    font-size: 16px;
+    color: #B7B7B7;
+}
+
+/* Scroll Bar */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #242424;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1DB954;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1ED760;
+}
+
+/* Inicialmente, o ícone de play estará invisível */
+.play-icon {
+    position: absolute;
+    top: 65%;
+    left: 70%;
+    transform: translate(-50%, -50%) translateY(10px); /* Inicialmente, ícone abaixo da posição */
+    font-size: 3rem;
+    color: #1DB954; /* Cor inicial */
+    opacity: 0; /* Invisível inicialmente */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transições para o ícone */
+    pointer-events: none;
+}
+
+/* Mostrar o ícone de play e mover ele para cima ao passar o mouse sobre o card */
+.artist-card:hover .play-icon,
+.album-card:hover .play-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(-10px); /* Move o ícone para cima */
+}
+
+/* Aplica a mudança de cor e tamanho somente quando o mouse passar sobre o ícone */
+.play-icon:hover {
+    color: red; /* Altera a cor do ícone para vermelho */
+    transform: translate(-50%, -50%) translateY(-10px) scale(1.2); /* Aumenta o ícone e move para cima */
+}
+
+/* Aumenta o tamanho do card no hover, incluindo o ícone */
+.artist-card:hover,
+.album-card:hover {
+    background-color: #222222;
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Evitar "piscar" ao sair do hover - Foco nas transições sincronizadas */
+.artist-card,
+.album-card {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Foco nas transições sincronizadas */
+}

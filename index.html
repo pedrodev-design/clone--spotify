@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/7024f45ad2.js" crossorigin="anonymous"></script>
+    <title>Spotify</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="nav-logo">
+                <i class="fa-brands fa-spotify"></i>
+            </div>
+
+            <div class="nav-library">
+                <i class="fa-solid fa-book"></i>
+                <p>Your library +</p>
+            </div>
+
+            <div class="nav-playlist">
+                <h5>Create your first playlist</h5>
+                <p>It's easy, we'll help you</p>
+                <button>Create playlist</button>
+            </div>
+
+            <div class="nav-podcast">
+                <h5>How about following a podcast?</h5>
+                <p>We will let you know about our episodes</p>
+                <button>Explore podcasts</button>
+            </div>
+
+            <div class="nav-footer">
+                <a href="#">Cool</a>
+                <a href="#">Privacy Center</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookies</a>
+                <a href="#">About Ads</a>
+                <a href="#">Accessibility</a>
+            </div>
+
+            <button class="nav-lang-button">
+                <i class="fa-solid fa-globe"></i>
+                English
+            </button>
+        </nav>
+
+        <main>
+            <div class="search-container">
+                <header class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search for songs">
+                    <div class="map-container">
+                        <i class="fa-regular fa-map" id="map-icon"></i>
+                        <span class="tooltip">Navegar</span>
+                    </div>
+                </header>
+
+                <div class="search-group">
+                    <div class="plans">
+                        <a href="#">See Premium plans</a>
+                    </div>
+
+                    <div class="download">
+                        <i class="fa-regular fa-circle-down"></i>
+                        <a href="#">Install App</a>
+                    </div>
+                    <div class="bell">
+                        <i class="fa-regular fa-bell bell"></i>
+                    </div>
+
+                    <div class="profile">
+                        <div class="circle-profile">
+                            <img src="assets/img/perfil.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <section class="content">
+                <h2>Popular Artists</h2>
+                <div class="artists-grid">
+                    <!-- Inserir com JS -->
+                </div>
+
+                <h2>Popular Albums</h2>
+                <div class="albums-grid">
+                    <!-- Inserir com JS -->
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+<script src="assets/js/main.js"></script>
+
+</html>
