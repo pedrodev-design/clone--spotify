@@ -32,7 +32,7 @@ A visually stunning and functional Spotify-inspired web application, designed to
 
 ## Preview 🖼️
 
-![Spotify Clone Screenshot](./assets/img/screenshot.png)
+![Spotify Clone Screenshot](./assets/img/preview.png)
 
 ## Usage 🎶
 
